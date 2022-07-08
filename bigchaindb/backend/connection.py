@@ -1,8 +1,4 @@
-# VVESRION 4
-# Copyright © 2020 Interplanetary Database Association e.V.,
-# BigchainDB and IPDB software contributors.
-# SPDX-License-Identifier: (Apache-2.0 AND CC-BY-4.0)
-# Code is Apache-2.0 and docs are CC-BY-4.0
+# VVESRION 5
 
 import logging
 from importlib import import_module
@@ -162,7 +158,7 @@ class Connection:
             try:
                 self._conn = self._connect()
             except ConnectionError as exc:
-                logger.warning('Attempt %s/%s. Connection to %s:%s failed after %sms.',
+                logger.warning('ATTEMpT %s/%s. Connection to %s:%s failed after %sms.',
                                attempt, self.max_tries if self.max_tries != 0 else '∞',
                                self.host, self.port, self.connection_timeout)
                 if attempt == self.max_tries:
