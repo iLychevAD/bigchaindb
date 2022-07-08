@@ -1,4 +1,4 @@
-# VVESRION 2
+# VVESRION 3
 # Copyright © 2020 Interplanetary Database Association e.V.,
 # BigchainDB and IPDB software contributors.
 # SPDX-License-Identifier: (Apache-2.0 AND CC-BY-4.0)
@@ -64,7 +64,7 @@ def connect(backend=None, host=None, port=None, name=None, max_tries=None,
     # if it ever happens.
     replicaset = replicaset or get_bigchaindb_config_value('replicaset')
     ssl = ssl if ssl is not None else get_bigchaindb_config_value('ssl', False)
-    print(f'THE SSL option is "{ssl}"')
+    logger.warning(f'THE SSL option is "{ssl}"')
     login = login or get_bigchaindb_config_value('login')
     password = password or get_bigchaindb_config_value('password')
     ca_cert = ca_cert or get_bigchaindb_config_value('ca_cert')
