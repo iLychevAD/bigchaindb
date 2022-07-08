@@ -1,4 +1,4 @@
-# VVESRION 3
+# VVESRION 4
 # Copyright © 2020 Interplanetary Database Association e.V.,
 # BigchainDB and IPDB software contributors.
 # SPDX-License-Identifier: (Apache-2.0 AND CC-BY-4.0)
@@ -82,7 +82,7 @@ def connect(backend=None, host=None, port=None, name=None, max_tries=None,
     except (ImportError, AttributeError) as exc:
         raise ConfigurationError('Error loading backend `{}`'.format(backend)) from exc
 
-    logger.debug('Connection: {}'.format(Class))
+    logger.debug('Connection is: {}'.format(Class))
     return Class(host=host, port=port, dbname=dbname,
                  max_tries=max_tries, connection_timeout=connection_timeout,
                  replicaset=replicaset, ssl=ssl, login=login, password=password,
