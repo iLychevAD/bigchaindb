@@ -63,6 +63,7 @@ def connect(backend=None, host=None, port=None, name=None, max_tries=None,
     # if it ever happens.
     replicaset = replicaset or get_bigchaindb_config_value('replicaset')
     ssl = ssl if ssl is not None else get_bigchaindb_config_value('ssl', False)
+    print(f'THE SSL option is "{ssl}"')
     login = login or get_bigchaindb_config_value('login')
     password = password or get_bigchaindb_config_value('password')
     ca_cert = ca_cert or get_bigchaindb_config_value('ca_cert')
