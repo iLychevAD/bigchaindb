@@ -1,4 +1,4 @@
-# VVESRION 5
+# VVESRION 6
 
 import logging
 from importlib import import_module
@@ -59,8 +59,10 @@ def connect(backend=None, host=None, port=None, name=None, max_tries=None,
     # The problem described above might be reconsidered next time we introduce a backend,
     # if it ever happens.
     replicaset = replicaset or get_bigchaindb_config_value('replicaset')
-    ssl = ssl if ssl is not None else get_bigchaindb_config_value('ssl', False)
     logger.warning(f'THE SSL option is "{ssl}"')
+    logger.warning(get_bigchaindb_config_value('ssl'))
+    ssl = ssl if ssl is not None else get_bigchaindb_config_value('ssl', False)
+    
     login = login or get_bigchaindb_config_value('login')
     password = password or get_bigchaindb_config_value('password')
     ca_cert = ca_cert or get_bigchaindb_config_value('ca_cert')
